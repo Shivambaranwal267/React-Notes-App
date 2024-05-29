@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AddNote({  addNote, noteText , handleNoteText }) {
+export default function AddNote({ addNote, noteText, handleNoteText }) {
   return (
     <div className="note new-note">
       <textarea
@@ -13,7 +13,7 @@ export default function AddNote({  addNote, noteText , handleNoteText }) {
       ></textarea>
 
       <div className="note-footer">
-        <small className="remaining">Remaining: 250</small>
+        <small className="remaining">Remaining: {250 - noteText.length}</small>
         <button className="add-btn" onClick={addNote}>
           Add
         </button>

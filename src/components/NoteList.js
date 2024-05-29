@@ -2,7 +2,13 @@ import React from "react";
 import Note from "./Note";
 import AddNote from "./AddNote";
 
-export default function NoteList({ notes, addNote, noteText, handleNoteText }) {
+export default function NoteList({
+  notes,
+  addNote,
+  noteText,
+  handleNoteText,
+  handleDeleteNote,
+}) {
   return (
     <div className="notes-container">
       <AddNote
@@ -11,7 +17,7 @@ export default function NoteList({ notes, addNote, noteText, handleNoteText }) {
         addNote={addNote}
       />
       {notes.map((note) => (
-        <Note key={note.id} note={note} />
+        <Note handleDeleteNote={handleDeleteNote} key={note.id} note={note} />
       ))}
     </div>
   );
